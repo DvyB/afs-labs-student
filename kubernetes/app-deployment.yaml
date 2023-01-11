@@ -23,6 +23,6 @@ spec:
         - secretRef:
             name: db-secret
         name: app-deployment
-        image: harbor.dev.afsmtddso.com/dbheemu-harbor-project/app@sha256:d47441db512e2324424da3e6d4670df4781892abd6cf7efee2dc81c6617a89b7
+        image: harbor.dev.afsmtddso.com/dbheemu-harbor-project/app:e4c664b-b030b7e
         ports:
         - containerPort: 5000
