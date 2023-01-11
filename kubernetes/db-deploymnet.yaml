@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-deploymnet
+  name: db-deploymnet
   namespace: dbheemu
   labels:
-    app: app
+    app: db
 spec:
   replicas: 1
   strategy:
@@ -12,17 +12,17 @@ spec:
   minReadySeconds: 20
   selector:
     matchLabels:
-      app: app
+      app: db
   template:
     metadata:
       labels:
-        app: app
+        app: db
     spec:
       containers:
       - envFrom:
         - secretRef:
             name: db-secret
-        name: app-deployment
-        image: harbor.dev.afsmtddso.com/dbheemu-harbor-project/app@sha256:d47441db512e2324424da3e6d4670df4781892abd6cf7efee2dc81c6617a89b7
+        name: db-deployment
+        image: harbor.dev.afsmtddso.com/dbheemu-harbor-project/db@sha256:9a133031319b56f895939e57aab82a6258fd47f1b35dae2e008fd52d0cf943e4
         ports:
-        - containerPort: 5000
+        - containerPort: 5432
