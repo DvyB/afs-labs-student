@@ -1,4 +1,4 @@
---adding new db pipeline
+-- adding new db pipeline
 -- PostgreSQL database dump
 --
 
